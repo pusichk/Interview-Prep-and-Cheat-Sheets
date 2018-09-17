@@ -75,14 +75,50 @@ Notes on Python Classes will go here.
 * Multiple return values
 * Lambda functions
 
+### Types
+
+### Operators and Universal Functions
+* `//` integer division
+* `**` power
+* `len()`
+
+
+
 ### Math
 Notes on basic math functions in python, and things like integer division.
-* min
-* max
-* divmod
+#### Built-In Math Functions
+These math-like functions come built in with Python and thus we don't need any imports.
+* `min(iterable)` will return the smallest item in the iterable. If there are duplicate smallest items it will return the first one. If the iterable is empty it will throw a ValueError.
+ * `min(arg1, arg2, ...)` is similar and will return the smallest argument out of all those provided.
+* `max` is virtually the same as `min` but, well it returns the max
+* `pow(x, y[, z])` Return x to the power y; if z is present, return x to the power y, modulo z. 
+ * The two argument form `pow(x, y)` is equivalent to the power operator `x**y`
+* `divmod(a,b)` takes two non-complex numbers and returns a pair of numbers consisting of the quotient and remainder when using integer division. Therefore `divmod(a,b)` will return `(a // b, a % b)`
+* `round(number[, ndigits])`Return _number_ rounded to _ndigits_ precision after the decimal point. If _ndigits_ is omitted or is `None`, it returns the _number_ to its nearest integer.
+ 
 
 ## Strings
 Notes on Strings
 
+# Python Data Structures
+Knowing how to use data structures is so important I actually made it a heading one!
 ## Lists
-Notes on lists
+Lists are the bread and butter of python.
+#### List Functions
+All of the below functions are called via the syntax `list.f()` where list is already defined. These functions come built-in.
+* `.append(x)` will add item x to the end of the list, equivalent to `a[len(a):] = [x]`
+* `.extend(iterable)` will add all of the items from iterable to the end of this list
+* `.insert(i, x)` will insert item x at position i, shifting all following items
+* `.remove(x)` will remove the first item x from the list, or throw a ValueError if it is not found
+* `.pop([i])` removes and returns the item at index i. If no index is supplied, then it will remove the **last** item in the list.
+* `.clear()` removes all items from the list, equivalent to `del a[:]`
+* `.index(x[, start[, end]])` returns the index of item x if found, if not found raises a ValueError. Start and End using slicing notation, such as `a.index("val", 2, -2)` will search indicies 2, up until the third to last for "val"
+ * if you just want to see if a list contains x, then simply do `if x in lst`
+* `.count(x)` returns the number of times x is found in the list, if not found it returns 0
+* `.sort(key=None, reversed=False)` will sort the list in place according to the key function. If reversed is True then the output is of course reversed
+ * Example of key: `key=lambda student: student[2]` would sort based on the third argument of the tuple
+* `reverse()` reverses the elements of the list in place
+* `.copy()` returns a shallow copy of list, equivalent to `a[:]`
+ * If you want a deep copy: import _copy_ and use `copied = copy.deepcopy(original)`
+Some built in functions are also very helpful for lists, these functions use the syntax `f(list)`
+* `sum()`
