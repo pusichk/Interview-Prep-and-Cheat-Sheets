@@ -81,6 +81,7 @@ Notes on Python Classes will go here.
 * `//` integer division
 * `**` power
 * `len()`
+* `enumerate(iterable, start=0)` returns an enumerable object, where the _next()_ method on this object will be a tuple with the index and the corresponding item from iterable.
 
 
 
@@ -100,10 +101,22 @@ These math-like functions come built in with Python and thus we don't need any i
 ## Strings
 Notes on Strings
 
+If you wanted to iterate over the lowercase alphabet, you could do so with
+```python
+from string import ascii_lowercase
+for ch in ascii_lowercase:
+ do_something()
+```
+
 # Python Data Structures
 Knowing how to use data structures is so important I actually made it a heading one!
 ## Lists
 Lists are the bread and butter of python.
+**Making a list**
+* `[]` will make an empty list, and so will `list()`
+* `[x]*k` will make a list of length k where each value is x
+**List Iteration**
+* Using `for i, val in enumerate(lst)` is easier than `for in range(..)`
 #### List Functions
 All of the below functions are called via the syntax `list.f()` where list is already defined. These functions come built-in.
 * `.append(x)` will add item x to the end of the list, equivalent to `a[len(a):] = [x]`
@@ -113,12 +126,26 @@ All of the below functions are called via the syntax `list.f()` where list is al
 * `.pop([i])` removes and returns the item at index i. If no index is supplied, then it will remove the **last** item in the list.
 * `.clear()` removes all items from the list, equivalent to `del a[:]`
 * `.index(x[, start[, end]])` returns the index of item x if found, if not found raises a ValueError. Start and End using slicing notation, such as `a.index("val", 2, -2)` will search indicies 2, up until the third to last for "val"
- * if you just want to see if a list contains x, then simply do `if x in lst`
+  * If you just want to see if a list contains x, then simply do `if x in lst`
 * `.count(x)` returns the number of times x is found in the list, if not found it returns 0
 * `.sort(key=None, reversed=False)` will sort the list in place according to the key function. If reversed is True then the output is of course reversed
- * Example of key: `key=lambda student: student[2]` would sort based on the third argument of the tuple
+  * Example of key: `key=lambda student: student[2]` would sort based on the third argument of the tuple
 * `reverse()` reverses the elements of the list in place
 * `.copy()` returns a shallow copy of list, equivalent to `a[:]`
- * If you want a deep copy: import _copy_ and use `copied = copy.deepcopy(original)`
+  * If you want a deep copy: import _copy_ and use `copied = copy.deepcopy(original)`
+
 Some built in functions are also very helpful for lists, these functions use the syntax `f(list)`
 * `sum()`
+
+## Stacks and Queues
+
+## Linked Lists
+
+## Sets
+
+* `.discard(x)` will remove x if it is present
+* `.remove(x)` will remove x, but if it is not present it will throw a KeyError
+
+## Maps
+
+## Heaps
