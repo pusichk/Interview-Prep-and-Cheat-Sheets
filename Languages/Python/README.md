@@ -75,6 +75,9 @@ Notes on Python Classes will go here.
 * Multiple return values
 * Lambda functions
 
+**map**
+Applies a given function to a list of one or more iterables, returning an iterable
+
 ### Types
 
 ### Operators and Universal Functions
@@ -82,7 +85,6 @@ Notes on Python Classes will go here.
 * `**` power
 * `len()`
 * `enumerate(iterable, start=0)` returns an enumerable object, where the _next()_ method on this object will be a tuple with the index and the corresponding item from iterable.
-
 
 
 ### Math
@@ -107,6 +109,22 @@ from string import ascii_lowercase
 for ch in ascii_lowercase:
  do_something()
 ```
+### String Functions
+* `str.capitalize()` returns a copy of the string with the first letter capitalized and the rest as lowercase
+* `str.count(sub[, start[, end]])` Returns the number of non-overlapping occurrances of sub in the range start:end
+* `str.endswith(suffix[, start[, end]])` and `str.startswith(prefix[, start[, end]])` use slicing notation
+* `str.find(sub[, start[, end]])` Finds the lowest index of sub in str, returns `-1` if sub is not found
+* `str.isalnum()` True if all alphanumeric and len>0.
+  * Similar functions: `str.isalpha()`, `str.isdecimal()`, `str.isdigit()`, `str.islower()`, `str.isspace()` for only whitespace, `str.isupper()`, and `str.istitle()` for uppercase only follows an uncased (whitespace, punct, etc)
+* `str.lower()` and `str.upper()` and `str.title()` do what we expect. `str.swapcase()` is also self-explanatory
+* `str.join(iterable)` Returns a String which is the concatenation of strings in iterable. The joining sequence will be `str`
+* `str.replace(old, new[, count])` Returns a copy with the first count (or all if count is not given) occurances of old replaced with new.
+* `str.strip([chars])` Returns a copy with leading/trailing chars removed. If chars is not given defaults to whitespace.
+* `str.partition(sep)` Split the string at the first occurrence of sep, and return a 3-tuple containing the part before the separator, the separator itself, and the part after the separator. If sep is not found returns (str, '', '')
+* `str.split(sep=None, maxsplit=-1)` Return a list of the words in the string, using sep as the delimiter string. If maxsplit is given, at most maxsplit splits are done
+  * Consecuative delimiters are not grouped, rather they lead to empty indices. So `'1,,2'.split(',')` returns `['1', '', '2'])`
+  * **Note:** If sep is not specified or is None, then runs of consequative whitespace are regarded as single seperators
+
 
 # Python Data Structures
 Knowing how to use data structures is so important I actually made it a heading one!
@@ -115,6 +133,7 @@ Lists are the bread and butter of python.
 **Making a list**
 * `[]` will make an empty list, and so will `list()`
 * `[x]*k` will make a list of length k where each value is x
+
 **List Iteration**
 * Using `for i, val in enumerate(lst)` is easier than `for in range(..)`
 #### List Functions
@@ -146,6 +165,24 @@ Some built in functions are also very helpful for lists, these functions use the
 * `.discard(x)` will remove x if it is present
 * `.remove(x)` will remove x, but if it is not present it will throw a KeyError
 
-## Maps
+## Dictionary (Maps)
+** Making a Dictionary **
+* We can make an empty dictionary with `{}` or with `dict()`
+* We can also make a dictionary via comprehension [https://python-3-patterns-idioms-test.readthedocs.io/en/latest/Comprehensions.html#dictionary-comprehensions](TODO Example)
+
+** Dictionary Iteration **
+
+### Dictionary Functions
+* 
+
+### Other Dictionaries
+#### Counter
+* A dict subclass for counting hashable objects. It is unordered.
+* Trying to retrieve a key that is not in a counter will not throw an error, instead it will return zero.
+* Make an empty Counter with `c = Counter()`
+  * These counters are all the same: `Counter('catbutt')`, `Counter({'a':1, 'b':1, 'c':1, 't':3, 'u':1})`, or `Counter(a=1...)`
+* `elements()` will return an iterator over elements repeating each as many times as its count. Arbitrary order
+* `most_common([n])` returns a list of tuplies (elm, cnt) of the n most common elements and their counts. Most common to least. If `n` is ommitted then it returns all of their elements and their counts.
+* `subtract(iterable-or-mapping)` reduces this counters counts by those counts in the param. Inputs and outputs can be negative.
 
 ## Heaps
