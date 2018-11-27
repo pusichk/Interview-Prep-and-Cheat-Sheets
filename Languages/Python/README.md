@@ -11,8 +11,11 @@ The notes, tips, and examples I find useful for using Python (and acing coding i
 * [Strings](#strings)
   * [Notes](#string-notes)
 * [Lists](#lists)
-  * [Notes](#array-notes)
-* [Math](#math)
+* [Stacks and Queues](#stacks-and-queues)
+* [Linked Lists](#linked-lists)
+* [Sets](#sets)
+* [Dictionaries (Maps)](#dictionaries-maps)
+* [Heaps](#heaps)
 
 ## General Python
 This section will focus on general information about Python. Things like: how to make a python script, using classes in python, how the language is interpreted, etc.
@@ -165,7 +168,7 @@ Some built in functions are also very helpful for lists, these functions use the
 * `.discard(x)` will remove x if it is present
 * `.remove(x)` will remove x, but if it is not present it will throw a KeyError
 
-## Dictionary (Maps)
+## Dictionaries (Maps)
 ** Making a Dictionary **
 * We can make an empty dictionary with `{}` or with `dict()`
 * We can also make a dictionary via comprehension [https://python-3-patterns-idioms-test.readthedocs.io/en/latest/Comprehensions.html#dictionary-comprehensions](TODO Example)
@@ -173,7 +176,7 @@ Some built in functions are also very helpful for lists, these functions use the
 ** Dictionary Iteration **
 
 ### Dictionary Functions
-* 
+* TODO
 
 ### Other Dictionaries
 #### Counter
