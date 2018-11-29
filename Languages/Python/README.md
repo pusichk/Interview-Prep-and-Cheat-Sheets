@@ -10,12 +10,13 @@ The notes, tips, and examples I find useful for using Python (and acing coding i
   * [Math](#math)
 * [Strings](#strings)
   * [Notes](#string-notes)
-* [Lists](#lists)
-* [Stacks and Queues](#stacks-and-queues)
-* [Linked Lists](#linked-lists)
-* [Sets](#sets)
-* [Dictionaries (Maps)](#dictionaries-maps)
-* [Heaps](#heaps)
+* [Data Structures](#python-data-structures)
+  * [Lists](#lists)
+  * [Stacks and Queues](#stacks-and-queues)
+  * [Linked Lists](#linked-lists)
+  * [Sets](#sets)
+  * [Dictionaries (Maps)](#dictionaries-maps)
+  * [Heaps](#heaps)
 
 ## General Python
 This section will focus on general information about Python. Things like: how to make a python script, using classes in python, how the language is interpreted, etc.
@@ -164,9 +165,11 @@ Some built in functions are also very helpful for lists, these functions use the
 ## Linked Lists
 
 ## Sets
-
+* `x in s` and `x not in s` are the basic operations for testing if something is in a set
+* `.add(x)` will add an element to a set, doing nothing if it already exists
 * `.discard(x)` will remove x if it is present
 * `.remove(x)` will remove x, but if it is not present it will throw a KeyError
+* **TODO:** lots of other useful functions for disjoint sets, and things like that.
 
 ## Dictionaries (Maps)
 ** Making a Dictionary **
